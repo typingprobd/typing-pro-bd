@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TYPING PRO BD</title>
+<style>
+:root{--bg:#f5f6fb;--ink:#172033;--muted:#68738a;--brand:#6546e8;--brand2:#8068f2;--card:#fff;--line:#e7e9f1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+header{background:linear-gradient(120deg,#5134d7,#8068f2);color:#fff;padding:22px max(18px,calc((100% - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:.8px;font-size:21px}.tag{font-size:12px;opacity:.9}
+button,select{font:inherit;border:0;border-radius:10px;padding:10px 14px;cursor:pointer}button{background:var(--brand);color:white}button.secondary{background:#eeeaff;color:#4c35c7}header button{background:#fff;color:#5134d7}
+main{max-width:1100px;margin:24px auto;padding:0 16px}.notice{background:#fff7df;border:1px solid #f3df9e;color:#72520b;padding:12px 15px;border-radius:12px;margin-bottom:18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 4px 18px #252b4210}
+.stat small,.muted{color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:5px}
+.layout{display:grid;grid-template-columns:220px 1fr;gap:16px}.nav{display:flex;flex-direction:column;gap:8px;height:max-content}.nav button{text-align:left;background:white;color:var(--ink);border:1px solid var(--line)}.nav button.active{background:#eeeaff;color:#4c35c7;border-color:#d8d0ff}
+h2{font-size:20px;margin:0 0 14px}.task{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:13px 0}.task:last-child{border:0}
+.pill{font-size:12px;background:#eeeaff;color:#5134d7;border-radius:30px;padding:4px 9px;white-space:nowrap}
+input,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:6px 0 12px}label{font-weight:600;font-size:14px}
+.panel{display:none}.panel.active{display:block}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.pay{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}.pay label{border:1px solid var(--line);padding:10px 13px;border-radius:10px;font-weight:500}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:28px}
+@media(max-width:700px){.layout{grid-template-columns:1fr}.nav{display:grid;grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:1fr}.row{grid-template-columns:1fr}.task{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div><div class="brand">⌨ TYPING PRO BD</div><div class="tag" data-bn="ঘরে বসে টাইপিং অনুশীলন ও কাজ" data-en="Typing practice and tasks from home">ঘরে বসে টাইপিং অনুশীলন ও কাজ</div></div><button id="langBtn">English</button></header>
+<main>
+<div class="notice" data-bn="ডেমো ওয়েবসাইট: এখানে দেখানো ব্যালেন্স বা পেমেন্ট বাস্তব নয়। আসল কাজ, আয় ও টাকা পাঠানোর ব্যবস্থা চালুর আগে যাচাইযোগ্য কাজের উৎস, নিরাপদ সার্ভার ও পেমেন্ট প্রক্রিয়া যুক্ত করতে হবে।" data-en="DEMO WEBSITE: Balances and payments shown here are not real. Before launching real work, earnings or payouts, add verified work sources, a secure server and a payment process.">ডেমো ওয়েবসাইট: এখানে দেখানো ব্যালেন্স বা পেমেন্ট বাস্তব নয়। আসল কাজ, আয় ও টাকা পাঠানোর ব্যবস্থা চালুর আগে যাচাইযোগ্য কাজের উৎস, নিরাপদ সার্ভার ও পেমেন্ট প্রক্রিয়া যুক্ত করতে হবে।</div>
+<div class="stats">
+<div class="card stat"><small data-bn="মোট ব্যালেন্স (ডেমো)" data-en="Total balance (demo)">মোট ব্যালেন্স (ডেমো)</small><strong>৳0.00</strong></div>
+<div class="card stat"><small data-bn="চলমান কাজ" data-en="Available tasks">চলমান কাজ</small><strong>03</strong></div>
+<div class="card stat"><small data-bn="জমা দেওয়া কাজ" data-en="Submitted tasks">জমা দেওয়া কাজ</small><strong id="submittedCount">00</strong></div>
+</div>
+<div class="layout">
+<nav class="nav">
+<button class="active" data-tab="home" data-bn="🏠 হোম" data-en="🏠 Home">🏠 হোম</button>
+<button data-tab="tasks" data-bn="⌨ টাইপিং কাজ" data-en="⌨ Typing Tasks">⌨ টাইপিং কাজ</button>
+<button data-tab="wallet" data-bn="💳 ওয়ালেট" data-en="💳 Wallet">💳 ওয়ালেট</button>
+<button data-tab="submit" data-bn="📤 কাজ জমা দিন" data-en="📤 Submit Work">📤 কাজ জমা দিন</button>
+<button data-tab="admin" data-bn="⚙ অ্যাডমিন তথ্য" data-en="⚙ Admin Info">⚙ অ্যাডমিন তথ্য</button>
+</nav>
+<section>
+<div id="home" class="panel active card"><h2 data-bn="স্বাগতম TYPING PRO BD-তে" data-en="Welcome to TYPING PRO BD">স্বাগতম TYPING PRO BD-তে</h2><p data-bn="এই নমুনা সাইটটি আপনার ওয়েবসাইটের প্রাথমিক ডিজাইন। কাজের নমুনা দেখুন, অনুশীলন করুন এবং ডেমো সাবমিশন পরীক্ষা করুন।" data-en="This sample site is the starting design for your website. View sample tasks, practice and test a demo submission.">এই নমুনা সাইটটি আপনার ওয়েবসাইটের প্রাথমিক ডিজাইন। কাজের নমুনা দেখুন, অনুশীলন করুন এবং ডেমো সাবমিশন পরীক্ষা করুন।</p><button onclick="showTab('tasks')" data-bn="কাজ দেখুন" data-en="View tasks">কাজ দেখুন</button></div>
+<div id="tasks" class="panel card"><h2 data-bn="উপলভ্য টাইপিং কাজ" data-en="Available typing tasks">উপলভ্য টাইপিং কাজ</h2>
+<div class="task"><div><b data-bn="কাজ ১: বাংলা অনুচ্ছেদ টাইপ" data-en="Task 1: Type a Bangla paragraph">কাজ ১: বাংলা অনুচ্ছেদ টাইপ</b><div class="muted" data-bn="নমুনা অনুশীলন • ৫ মিনিট" data-en="Practice sample • 5 minutes">নমুনা অনুশীলন • ৫ মিনিট</div></div><span class="pill">Practice</span></div>
+<div class="task"><div><b data-bn="কাজ ২: ইংরেজি অনুচ্ছেদ টাইপ" data-en="Task 2: Type an English paragraph">কাজ ২: ইংরেজি অনুচ্ছেদ টাইপ</b><div class="muted">Practice sample • 5 min</div></div><span class="pill">Practice</span></div>
+<div class="task"><div><b data-bn="কাজ ৩: ছোট ডেটা এন্ট্রি" data-en="Task 3: Simple data entry">কাজ ৩: ছোট ডেটা এন্ট্রি</b><div class="muted" data-bn="নমুনা অনুশীলন • ৩ মিনিট" data-en="Practice sample • 3 minutes">নমুনা অনুশীলন • ৩ মিনিট</div></div><span class="pill">Practice</span></div>
+<p class="muted" data-bn="এগুলো অনুশীলনের নমুনা—কোনো পারিশ্রমিকের প্রতিশ্রুতি নয়।" data-en="These are practice samples, not paid-work offers.">এগুলো অনুশীলনের নমুনা—কোনো পারিশ্রমিকের প্রতিশ্রুতি নয়।</p></div>
+<div id="submit" class="panel card"><h2 data-bn="কাজ জমা দিন (ডেমো)" data-en="Submit work (demo)">কাজ জমা দিন (ডেমো)</h2><label data-bn="আপনার নাম" data-en="Your name">আপনার নাম</label><input id="workerName" placeholder="Name"><label data-bn="টাইপ করা লেখা" data-en="Your typed text">টাইপ করা লেখা</label><textarea id="workText" rows="5" placeholder="এখানে লেখা দিন / Type here"></textarea><button onclick="submitDemo()" data-bn="ডেমো জমা দিন" data-en="Submit demo">ডেমো জমা দিন</button><p id="submitMsg" class="muted"></p></div>
+<div id="wallet" class="panel card"><h2 data-bn="ওয়ালেট ও উত্তোলন" data-en="Wallet and withdrawal">ওয়ালেট ও উত্তোলন</h2><p data-bn="ডেমো ব্যালেন্স: ৳০.০০" data-en="Demo balance: BDT 0.00">ডেমো ব্যালেন্স: ৳০.০০</p><p class="muted" data-bn="বাস্তব পেমেন্ট চালু করা হয়নি। ভবিষ্যতে যাচাইকৃত কাজের পারিশ্রমিক অনুমোদনের পর bKash, Nagad বা Rocket-এ ম্যানুয়াল পেমেন্ট যুক্ত করা যাবে।" data-en="Real payouts are not enabled. Manual payouts to bKash, Nagad or Rocket can be added after approving payment for verified work.">বাস্তব পেমেন্ট চালু করা হয়নি। ভবিষ্যতে যাচাইকৃত কাজের পারিশ্রমিক অনুমোদনের পর bKash, Nagad বা Rocket-এ ম্যানুয়াল পেমেন্ট যুক্ত করা যাবে।</p><div class="pay"><label><input type="radio" name="pay" value="bKash"> bKash</label><label><input type="radio" name="pay" value="Nagad"> Nagad</label><label><input type="radio" name="pay" value="Rocket"> Rocket</label></div><label data-bn="মোবাইল নম্বর (শুধু UI নমুনা)" data-en="Mobile number (UI sample only)">মোবাইল নম্বর (শুধু UI নমুনা)</label><input placeholder="01XXXXXXXXX" disabled><button disabled data-bn="উত্তোলন (এখন বন্ধ)" data-en="Withdraw (disabled)">উত্তোলন (এখন বন্ধ)</button></div>
+<div id="admin" class="panel card"><h2 data-bn="অ্যাডমিন সেটআপের পরবর্তী ধাপ" data-en="Next steps for admin setup">অ্যাডমিন সেটআপের পরবর্তী ধাপ</h2><p data-bn="এই ফাইলটি শুধু সামনের দিকের ডিজাইন। নিরাপদ অ্যাডমিন লগইন, ইউজার ডেটাবেস, কাজ যাচাই ও পেমেন্ট অনুমোদনের জন্য সার্ভার/ব্যাকএন্ড তৈরি করতে হবে। এই ডেমোতে কোনো অ্যাডমিন পাসওয়ার্ড নেই।" data-en="This file is only the front-end design. A backend is required for secure admin login, user database, work review and payout approval. This demo has no admin password.">এই ফাইলটি শুধু সামনের দিকের ডিজাইন। নিরাপদ অ্যাডমিন লগইন, ইউজার ডেটাবেস, কাজ যাচাই ও পেমেন্ট অনুমোদনের জন্য সার্ভার/ব্যাকএন্ড তৈরি করতে হবে। এই ডেমোতে কোনো অ্যাডমিন পাসওয়ার্ড নেই।</p><ul><li>Firebase Authentication</li><li>Firestore database + security rules</li><li>Admin-only approval controls</li><li>Verified work and transparent payout policy</li></ul></div>
+</section></div></main>
+<footer>© TYPING PRO BD • Demo starter website</footer>
+<script>
+let lang='bn';
+function setLang(){document.querySelectorAll('[data-bn]').forEach(el=>el.textContent=el.dataset[lang]);document.getElementById('langBtn').textContent=lang==='bn'?'English':'বাংলা';document.documentElement.lang=lang}
+document.getElementById('langBtn').onclick=()=>{lang=lang==='bn'?'en':'bn';setLang()};
+function showTab(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id))}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+function submitDemo(){let n=document.getElementById('workerName').value.trim(),t=document.getElementById('workText').value.trim();let m=document.getElementById('submitMsg');if(!n||!t){m.textContent=lang==='bn'?'নাম ও লেখা পূরণ করুন।':'Please enter your name and text.';return}let c=Number(document.getElementById('submittedCount').textContent)+1;document.getElementById('submittedCount').textContent=String(c).padStart(2,'0');m.textContent=lang==='bn'?'ডেমো সাবমিশন গ্রহণ করা হয়েছে (শুধু এই ব্রাউজারে)।':'Demo submission received (this browser only).';document.getElementById('workText').value=''}
+</script>
+</body></html>
